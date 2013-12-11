@@ -2,11 +2,13 @@ $putainde-Nav-logo-width: 5rem;
 
 .putainde-Nav {
   position: relative;
-  line-height: 3rem;
-  //margin: 0 0 2rem;
+  //line-height: 3rem;
+  margin: 1rem 0 0 0;
+  max-width: 99%;
   background: $putainde-Color-red;
-  box-shadow: 0 0 .2rem rgba(#000, .6);
-
+  //box-shadow: 0 0 .2rem rgba(#000, .6);
+  font-family: "Exo 2";
+  border-radius: 0 999px 999px 0;
   a {
     color: #fff !important;
     text-decoration: none;
@@ -22,37 +24,47 @@ $putainde-Nav-logo-width: 5rem;
   }
 }
 
+  .putainde-SiteTitle,
+  .putainde-Baseline,
+  .putainde-Nav-list {
+    display: table-cell;
+      vertical-align: middle;
+  }
 
   .putainde-SiteTitle {
-    display: inline-block;
+    //display: inline-block;
 
     //font-size: 2rem;
     font-weight: bold;
 
     text-decoration: none;
 
+    white-space: nowrap;
+    text-align: center;
+    padding: 5px 0;
+
     // add a padding for the logo when it's not outside the container
-    margin-left: $putainde-Nav-logo-width/2;
-    @include crp-Media-s { margin-left: $putainde-Nav-logo-width; }
-    @include crp-Media-l { margin: 0; } // & remove it when logo is placed outside
+    //margin-left: $putainde-Nav-logo-width/2;
+    //@include crp-Media-s { margin-left: $putainde-Nav-logo-width; }
+    //@include crp-Media-l { margin: 0; } // & remove it when logo is placed outside
   }
 
     .putainde-Logo {
-      position: absolute;
-      left: 0;
+      /*position: absolute;
+      left: 0;*/
 
       // move outside when screen is large enough
-      @include crp-Media-l {
+      /*@include crp-Media-l {
         left: auto;
         right: 100%;
-      }
+      }*/
       // tiny icon on xs screen
       width: $putainde-Nav-logo-width/2;
       @include crp-Media-s { width: $putainde-Nav-logo-width; }
 
       // move to top when icon is big enough
-      top: .4rem;
-      @include crp-Media-s { top: -1rem; }
+      //top: .4rem;
+      //@include crp-Media-s { top: -1rem; }
 
       transition: all .2s;
 
@@ -63,22 +75,37 @@ $putainde-Nav-logo-width: 5rem;
     }
 
     .putainde-Baseline {
-      font-size: .75rem;
+      //font-size: .75rem;
+      font-size: 1rem;
+      padding: 2rem;
       line-height: 1;
       color: rgba(#fff, .4);
       // show only when there is enough place since it's kindof useless
-      display: none;
-      @include crp-Media-m { display: inline; }
+      //display: none;
+      //@include crp-Media-m { display: inline;}
     }
 
   .putainde-Nav-list {
-    float: right;
+    //float: right;
     margin: 0;
     padding: 0;
     font-size: .8rem;
+    white-space: nowrap;
 
-    &,
-    li { display: inline-block; }
+    li {
+      display: inline-block;
+      a {
+        display: inline-block;
+        border-bottom: 3px solid $putainde-Color-lightred;
+        margin: 0 1rem;
+        padding: .5rem;
+        transition: all .2s ease-in;
+        border-radius: 10px 10px 0 0;
+        &:hover {
+          background: $putainde-Color-lightred;
+        }
+      }
+    }
 
-    li { padding: 0 1rem; }
+    //li { padding: 0 1rem; }
   }

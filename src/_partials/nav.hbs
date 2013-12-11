@@ -2,11 +2,11 @@
 	<div class="grid">
 		<div class="grid__cell">
 			<a class="putainde-SiteTitle" href="{{ happyplan.baseUrl }}">
-				<img class="putainde-Logo" alt="Putain de Code !" src="{{ happyplan.baseUrls.images }}/p!-logo.svg" />
+				<img class="putainde-Logo" alt="Putain de Code !" src="{{ happyplan.baseUrls.images }}/p!-logo.svg" /><br />
 				{{ happyplan.name }}
 			</a>
 
-			<span class="putainde-Baseline">{{ happyplan.description }}</span>
+			<span class="putainde-Baseline">"{{ happyplan.description }}"</span>
 
 			<ul class="putainde-Nav-list">
 				<li class=""><a class="putainde-Nav-list-item {{#is this.nav 'home' }}putainde-Nav-list-item--active{{/is}}" href="{{ happyplan.baseUrl }}">Home</a>
