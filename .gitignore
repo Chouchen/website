@@ -1,14 +1,12 @@
-# cache
-.DS_Store
-.sass-cache
-
-# packages
+# npm
 node_modules
-bower_components
+npm-debug.log
 
 # build
+contributors.json
 dist
-.tmp
 
-# gh-page
-.grunt
+# statinamic static build (for node)
+scripts/statinamic-static.js
+# statinamic static useless files
+scripts/_

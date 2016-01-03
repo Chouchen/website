@@ -1,23 +1,22 @@
+sudo: false
+
 language: node_js
-before_install:
-# global requirements
-  - make init
-  - make install
-# local requirements
-  - make update
-# for some test with dates
-  - sudo cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+node_js:
+  - 4
 
-notifications:
-  irc: "irc.freenode.org#p!"
-  webhooks:
-    urls:
-      - https://webhooks.gitter.im/e/1963aded18e129703057
-    #on_success: always  # options: [always|never|change] default: always
-    #on_failure: always  # options: [always|never|change] default: always
-    on_start: true     # default: false
+# contributors task: need all commits to build the contributors cache correctly
+git:
+  depth: 100000
 
-cache:
-  directories:
-    - bower_components
-    - node_modules
+env:
+  global:
+    # GH_TOKEN
+    - secure: d1VZ29IbfOn0Re774eOWFpCcSLMd3N49ehmMOF8NiAQBV30NddTr5GVua19sMfCBVryHVu5MaaD+xf8Qr1fANqZveFhjIdTsTRLt7BkfxpmrWwHKn6g1szQq6KMCUECtHToe9qrCwA/UC0p4+rNofd3PnlF51dTPvP8ZG1Yy7U0=
+    - GIT_DEPLOY_REPO=https://$GH_TOKEN@github.com/putaindecode/putaindecode.io.git
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: ./scripts/deploy.sh
+  on:
+    branch: master
